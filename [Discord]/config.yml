@@ -1,6 +1,6 @@
 ########################################
 #                                      #
-#            DTeam  CONFIG             #
+#            BOT    CONFIG             #
 #                                      #
 ########################################
 
@@ -43,7 +43,7 @@ Storage:
 
 Join:
   Roles:
-    - "Member"
+    - "Liige"
 
   Messages:
     Enabled: true
@@ -251,14 +251,14 @@ Tickets:
   PingSupport: true
   PingUser: true
   DMClosureReason: false
-  CloseConfirmation: false
+  CloseConfirmation: true
   CloseAllConfirmation: true
   CreationChannel: false
-  SupportRole: "Meeskond"
+  SupportRole: "Staff"
 
   Channel:
-    Category: "Tickets"
-    Topic: "**User** {user-tag} **Reason** {reason} **Time** {time} **ID** {id}"
+    Category: "Ticketid"
+    Topic: "**Isik** {user-tag} **Põhjus** {reason} **Aeg:** {time} **ID** {id}"
 
   Logs:
     Enabled: true
@@ -330,24 +330,24 @@ Verification:
 AutoResponse:
   Enabled: true
   Responses:
-    - Text: "Test auto response"
-      Content: "This is a response!"
+    - Text: "Automaatreaktsiooni testimine"
+      Content: "See on vastus!"
 
-    - Text: "Auto response #2!"
+    - Text: "Automaatne vastus nr 2!"
       DM: true
       Type: "text"
-      Content: "This is a DM auto response"
+      Content: "See on DM automaatvastus"
       AfterDM:
-        Fail: "Your DMs are locked."
-        Success: "A message has been sent to your DMs!"
+        Fail: "Teie DM-id on lukus."
+        Success: "Teie DM-idele on sõnum saadetud!"
 
     - Text: "-disabled-command"
       Delete: true
       DeleteResponse: 2
       Type: "embed"
       Embed:
-        Title: "Command Disabled"
-        Description: "Sorry, this command is disabled"
+        Title: "Käsk keelatud"
+        Description: "Vabandust, see käsk on keelatud"
         Thumbnail: "{bot-pfp}"
 
 ########################################
@@ -358,8 +358,8 @@ AutoResponse:
 
 TempChannels:
   Enabled: true
-  VoiceChannel: "Temp Channel"
-  Category: "Temp Channels"
+  VoiceChannel: "Temp Kanal"
+  Category: "Temp"
 
 ########################################
 #                                      #
@@ -407,8 +407,8 @@ Suggestions:
       # Only works if type is "text"
 
       Embed: # Only works if type is "embed"
-        Title: "Suggestion Note"
-        Description: "{note}\n\n> **Note By:** {user-mention}"
+        Title: "Soovitusmärkus"
+        Description: "{note}\n\n> **Märge isikult:** {user-mention}"
         Timestamp: true
         Color: "#8d83fc"
 
@@ -518,11 +518,11 @@ AutoAnnouncements:
       Interval: 10 # in seconds
       Type: "embed" # or "text"
       Embed:
-        Title: "Join our Minecraft server! The IP is play.example.com"
+        Title: "Ühine meie serveriga! IP: "
     - Channel: "general"
       Interval: 5
       Type: "text"
-      Content: "Hello server!"
+      Content: "Jou server!"
 
 ########################################
 #                                      #
@@ -533,13 +533,13 @@ AutoAnnouncements:
 ActivityCycling:
   Enabled: false
   Activities:
-    - ["watching", "Tickets: {tickets}"]
-    - ["playing", "Total Users: {users}"]
-    - ["playing", "Total Online Users: {total-online-users}"]
-    - ["watching", "Total Online Humans: {total-online-humans}"]
-    - ["watching", "Total Online Bots: {total-online-bots}"]
-    - ["listening", "Humans: {humans}"]
-    - ["playing", "Bots: {bots}"]
+    - ["watching", "Ticketeid: {tickets}"]
+    - ["playing", "Inimesi: {users}"]
+    - ["playing", "Inimesi hetkel online: {total-online-users}"]
+    - ["watching", "Isikuid hetkel online: {total-online-humans}"]
+    - ["watching", "Roboteid hetkel online: {total-online-bots}"]
+    - ["listening", "Inimesi: {humans}"]
+    - ["playing", "Bot-e: {bots}"]
   Time: 5
   Type: "ordered"
   # Types: "ordered" or "random"
@@ -659,16 +659,16 @@ ReactionRoles:
       "🇪": "Events"
       "🎉": "Giveaways"
     Embed:
-      Title: "Reaction Roles - Ping Roles"
-      Description: "The corresponding role will be pinged whenever an update, poll, event, or giveaway is made. If you like to be notified when one of these things occur, please react with the following emojis to get the corresponding roles:\n\n{emojiroles}"
+      Title: "Reaktsioonirollid – pingirollid"
+      Description: "Vastav roll pingestatakse iga kord, kui tehakse värskendus, küsitlus, sündmus või kingitus. Kui soovite saada märguandeid, kui mõni neist asjadest juhtub, reageerige vastavate rollide saamiseks järgmiste emotikonidega:\n\n{emojiroles}"
   - Name: "favoritegame"
     OnlyOne: true
     EmojisToRoles:
       "🇺": "Fortnite"
       "🇵": "Minecraft"
     Embed:
-      Title: "Reaction Roles - Favorite Game"
-      Description: "Which game is your favorite? \n\n{emojiroles}"
+      Title: "Reaktsioonirollid – lemmikmäng"
+      Description: "Milline mäng on sinu lemmik? \n\n{emojiroles}"
 
 ########################################
 #                                      #
@@ -747,5 +747,5 @@ Other:
     DiscordEmoji: ":tada:"
     UnicodeEmoji: "🎉"
 
-# Do not change this unless told to do so by a Corebot staff member.
+
 BotVersion: "4.4.4"
